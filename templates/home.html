@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+        VK.init({
+            apiId: 7541028
+        });
+    </script>
+
+    <div id="vk_auth"></div>
+    <script type="text/javascript">
+        VK.Widgets.Auth('vk_auth', {});
+    </script>
+
+    <h1>Это Главная страница сайта</h1>
+    <p>
+        Добро пожаловать на наш сайт по изучению Django!
+    </p>
+    <a href="{% url 'login' %}">Войти</a>
+    <a href="{% url 'register' %}">Регистрация</a>
+
+{% endblock %}
